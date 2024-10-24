@@ -1,0 +1,206 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 28
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE LAW;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> USE LAW;
+Database changed
+mysql> CREATE TABLE MILK(ID INT(1),F_NAME CHAR(2),L_NAME CHAR(3),COURSE CHAR(20), DOB INT(9),GENDER CHAR(3),NATIONALITY CHAR(5))
+    -> CREATE TABLE MILK(REG_NO INT(1),F_NAME CHAR(2),L_NAME CHAR(3),COURSE CHAR(20), DOB VARCHAR(9),GENDER CHAR(3),NATIONALITY CHAR(5));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATE TABLE MILK(REG_NO INT(1),F_NAME CHAR(2),L_NAME CHAR(3),COURSE CHAR(20), D' at line 2
+mysql> CREATE TABLE LAW(REG_NI INT(1),F_NAME CHAR(2),L_NAME(4),COURSE CHAR(5),DOB VARCHAT(40),GENDER CHAR(3),NATIONALITY CHAR(6));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(4),COURSE CHAR(5),DOB VARCHAT(40),GENDER CHAR(3),NATIONALITY CHAR(6))' at line 1
+mysql> CREATE TABLE LAW(REG_NI INT(1),F_NAME CHAR(2),L_NAME(4),COURSE CHAR(5),DOB VARCHAT(40),GENDER CHAR(3),NATIONALITY CHAR(6));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(4),COURSE CHAR(5),DOB VARCHAT(40),GENDER CHAR(3),NATIONALITY CHAR(6))' at line 1
+mysql> CREATE TABLE LAW(REG_NI INT(1),F_NAME CHAR(2),L_NAME CHAR(4),COURSE CHAR(5),DOB VARCHAT(40),GENDER CHAR(3),NATIONALITY CHAR(6));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VARCHAT(40),GENDER CHAR(3),NATIONALITY CHAR(6))' at line 1
+mysql> CREATE TABLE LAW(REG_NI INT(1),F_NAME CHAR(2),L_NAME CHAR(4),COURSE CHAR(5),DOB VARCHAR(40),GENDER CHAR(3),NATIONALITY CHAR(6));
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+mysql> INSERT INTO LAW VALUES(11','NIYONSABA','ELINA','ORGANIZATION','25/05/2003','FEMALE','RWANDAN');
+
+
+
+
+
+***Am sorry to what happen to me,  i have loosed my data and to bring back become impossible but i get were i end off, that why i have nothing in medal***
+
+
+
+
+
+
+
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use ruhande;
+Database changed
+mysql> select* from ngoma;
++------+------------+---------+--------+----------+------------+------------+-----------+--------+
+| ID   | F_NAME     | L_NAME  | GENDER | PROVINCE | DISTRICT   | SECTOR     | TELEPHONE | SALARY |
++------+------------+---------+--------+----------+------------+------------+-----------+--------+
+|  101 | IRYOYAVUZE | BOSCO   | MALE   | EAST     | RWAMAGANA  | MURAMBI    | 785658764 |   4000 |
+|  102 | ISHIMWE    | SAFI    | FEMALE | WEST     | NYABIHU    | MATAMBI    | 783435678 |   4000 |
+|  103 | UWERA      | SIFA    | FEMALE | KIGALI   | GASABO     | KARURUMA   | 723933976 |   4000 |
+|  104 | SHEMA      | TOM     | MALE   | NOTH     | MUSANZE    | MUHOZA     | 795034086 |   4000 |
+|  105 | INEZA      | AGAPE   | FEMALE | KIGALI   | NYARUGENGE | GATSATA    | 793421687 |   4000 |
+|  106 | MUGISHA    | GAD     | MALE   | SOUTH    | HUYE       | KAMUZI     | 734890677 |   4000 |
+|  107 | ASHIMWE    | BELYSE  | FEMALE | EAST     | GATSIBO    | KIRAMURUZI | 798456348 |   4000 |
+|  108 | AMINA      | UWIMANA | FEMALE | NORTH    | GAKENKE    | KIMUHURURA | 794567845 |   4000 |
+|  109 | ANGE       | ISIMBI  | FEMALE | WEST     | KARONGI    | MUNAZI     | 798674560 |   4000 |
+|  110 | MUNANA     | KELLY   | MALE   | SOUTH    | KAMONYI    | MATITI     | 726899476 |   4000 |
++------+------------+---------+--------+----------+------------+------------+-----------+--------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD REG_NO INT(20);
+Query OK, 10 rows affected, 1 warning (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 1
+
+mysql> SELECT* FROM NGOMA;
++------+------------+---------+--------+----------+------------+------------+-----------+--------+--------+
+| ID   | F_NAME     | L_NAME  | GENDER | PROVINCE | DISTRICT   | SECTOR     | TELEPHONE | SALARY | REG_NO |
++------+------------+---------+--------+----------+------------+------------+-----------+--------+--------+
+|  101 | IRYOYAVUZE | BOSCO   | MALE   | EAST     | RWAMAGANA  | MURAMBI    | 785658764 |   4000 |   NULL |
+|  102 | ISHIMWE    | SAFI    | FEMALE | WEST     | NYABIHU    | MATAMBI    | 783435678 |   4000 |   NULL |
+|  103 | UWERA      | SIFA    | FEMALE | KIGALI   | GASABO     | KARURUMA   | 723933976 |   4000 |   NULL |
+|  104 | SHEMA      | TOM     | MALE   | NOTH     | MUSANZE    | MUHOZA     | 795034086 |   4000 |   NULL |
+|  105 | INEZA      | AGAPE   | FEMALE | KIGALI   | NYARUGENGE | GATSATA    | 793421687 |   4000 |   NULL |
+|  106 | MUGISHA    | GAD     | MALE   | SOUTH    | HUYE       | KAMUZI     | 734890677 |   4000 |   NULL |
+|  107 | ASHIMWE    | BELYSE  | FEMALE | EAST     | GATSIBO    | KIRAMURUZI | 798456348 |   4000 |   NULL |
+|  108 | AMINA      | UWIMANA | FEMALE | NORTH    | GAKENKE    | KIMUHURURA | 794567845 |   4000 |   NULL |
+|  109 | ANGE       | ISIMBI  | FEMALE | WEST     | KARONGI    | MUNAZI     | 798674560 |   4000 |   NULL |
+|  110 | MUNANA     | KELLY   | MALE   | SOUTH    | KAMONYI    | MATITI     | 726899476 |   4000 |   NULL |
++------+------------+---------+--------+----------+------------+------------+-----------+--------+--------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATES NGOMA SET REG_NO='2345' WHERE ID='101';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATES NGOMA SET REG_NO='2345' WHERE ID='101'' at line 1
+mysql> UPDATE NGOMA SET REG_NO='2345' WHERE ID='101';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET REG_NO='2346' WHERE ID='102';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET REG_NO='2347' WHERE ID='103';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET REG_NO='2348' WHERE ID='104';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET REG_NO='2349' WHERE ID='105';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET REG_NO='2350' WHERE ID='106';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET REG_NO='2351' WHERE ID='107';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET REG_NO='2352' WHERE ID='108';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET REG_NO='2353' WHERE ID='109';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET REG_NO='2354' WHERE ID='110';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT* FROM NGOMA;
++------+------------+---------+--------+----------+------------+------------+-----------+--------+--------+
+| ID   | F_NAME     | L_NAME  | GENDER | PROVINCE | DISTRICT   | SECTOR     | TELEPHONE | SALARY | REG_NO |
++------+------------+---------+--------+----------+------------+------------+-----------+--------+--------+
+|  101 | IRYOYAVUZE | BOSCO   | MALE   | EAST     | RWAMAGANA  | MURAMBI    | 785658764 |   4000 |   2345 |
+|  102 | ISHIMWE    | SAFI    | FEMALE | WEST     | NYABIHU    | MATAMBI    | 783435678 |   4000 |   2346 |
+|  103 | UWERA      | SIFA    | FEMALE | KIGALI   | GASABO     | KARURUMA   | 723933976 |   4000 |   2347 |
+|  104 | SHEMA      | TOM     | MALE   | NOTH     | MUSANZE    | MUHOZA     | 795034086 |   4000 |   2348 |
+|  105 | INEZA      | AGAPE   | FEMALE | KIGALI   | NYARUGENGE | GATSATA    | 793421687 |   4000 |   2349 |
+|  106 | MUGISHA    | GAD     | MALE   | SOUTH    | HUYE       | KAMUZI     | 734890677 |   4000 |   2350 |
+|  107 | ASHIMWE    | BELYSE  | FEMALE | EAST     | GATSIBO    | KIRAMURUZI | 798456348 |   4000 |   2351 |
+|  108 | AMINA      | UWIMANA | FEMALE | NORTH    | GAKENKE    | KIMUHURURA | 794567845 |   4000 |   2352 |
+|  109 | ANGE       | ISIMBI  | FEMALE | WEST     | KARONGI    | MUNAZI     | 798674560 |   4000 |   2353 |
+|  110 | MUNANA     | KELLY   | MALE   | SOUTH    | KAMONYI    | MATITI     | 726899476 |   4000 |   2354 |
++------+------------+---------+--------+----------+------------+------------+-----------+--------+--------+
+10 rows in set (0.00 sec)
+
+
+mysql> SELECT* FROM NGOMA WHERE GENDER='FEMALE' OR DISRTICT='MUSANZE';
+ERROR 1054 (42S22): Unknown column 'DISRTICT' in 'where clause'
+mysql> SELECT* FROM NGOMA WHERE GENDER='MARE';
+Empty set (0.00 sec)
+
+mysql> SELECT* FROM NGOMA WHERE GENDER='MALE';
++------+------------+--------+--------+----------+-----------+---------+-----------+--------+
+| ID   | F_NAME     | L_NAME | GENDER | PROVINCE | DISTRICT  | SECTOR  | TELEPHONE | REG_NO |
++------+------------+--------+--------+----------+-----------+---------+-----------+--------+
+|  101 | IRYOYAVUZE | BOSCO  | MALE   | EAST     | RWAMAGANA | MURAMBI | 785658764 |   2345 |
+|  104 | SHEMA      | TOM    | MALE   | NOTH     | MUSANZE   | MUHOZA  | 795034086 |   2348 |
+|  106 | MUGISHA    | GAD    | MALE   | SOUTH    | HUYE      | KAMUZI  | 734890677 |   2350 |
+|  110 | MUNANA     | KELLY  | MALE   | SOUTH    | KAMONYI   | MATITI  | 726899476 |   2354 |
++------+------------+--------+--------+----------+-----------+---------+-----------+--------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT  GENDER,PROVINCE,DISTRICT,SECTOR FROM NGOMA;
++--------+----------+------------+------------+
+| GENDER | PROVINCE | DISTRICT   | SECTOR     |
++--------+----------+------------+------------+
+| MALE   | EAST     | RWAMAGANA  | MURAMBI    |
+| FEMALE | WEST     | NYABIHU    | MATAMBI    |
+| FEMALE | KIGALI   | GASABO     | KARURUMA   |
+| MALE   | NOTH     | MUSANZE    | MUHOZA     |
+| FEMALE | KIGALI   | NYARUGENGE | GATSATA    |
+| MALE   | SOUTH    | HUYE       | KAMUZI     |
+| FEMALE | EAST     | GATSIBO    | KIRAMURUZI |
+| FEMALE | NORTH    | GAKENKE    | KIMUHURURA |
+| FEMALE | WEST     | KARONGI    | MUNAZI     |
+| MALE   | SOUTH    | KAMONYI    | MATITI     |
++--------+----------+------------+------------+
+10 rows in set (0.00 sec)
+
+
+
+mysql> SELECT`^C
+mysql> SELEC*FROM NGOMA WHERE DISTRICT='RWAMAGANA' OR GENDER='MALE';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELEC*FROM NGOMA WHERE DISTRICT='RWAMAGANA' OR GENDER='MALE'' at line 1
+mysql> SELECT* FROM NGOMA WHERE DISTRICT='RWAMAGANA' OR GENDER='MALE';
++------+------------+--------+--------+----------+-----------+---------+-----------+--------+
+| ID   | F_NAME     | L_NAME | GENDER | PROVINCE | DISTRICT  | SECTOR  | TELEPHONE | REG_NO |
++------+------------+--------+--------+----------+-----------+---------+-----------+--------+
+|  101 | IRYOYAVUZE | BOSCO  | MALE   | EAST     | RWAMAGANA | MURAMBI | 785658764 |   2345 |
+|  104 | SHEMA      | TOM    | MALE   | NOTH     | MUSANZE   | MUHOZA  | 795034086 |   2348 |
+|  106 | MUGISHA    | GAD    | MALE   | SOUTH    | HUYE      | KAMUZI  | 734890677 |   2350 |
+|  110 | MUNANA     | KELLY  | MALE   | SOUTH    | KAMONYI   | MATITI  | 726899476 |   2354 |
++------+------------+--------+--------+----------+-----------+---------+-----------+--------+
+4 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
